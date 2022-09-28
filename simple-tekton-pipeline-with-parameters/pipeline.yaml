@@ -7,9 +7,22 @@ spec:
   - name: message
     description: "Message Body"
   tasks:
-    - name: sample-task
+    - name: sample-task1
       taskRef:
         name: sample-task
       params:
         - name: message
-          value: $(params.message)
+          value: "Hello Sample task1"
+    - name: sample-task2
+      taskRef:
+        name: sample-task
+      params:
+        - name: message
+          value: "Hello Sample task2"
+    - name: end-task
+      runAfter: [ sample-task1, sample-task2 ]
+      taskRef:
+        name: sample-task
+      params:
+        - name: message
+          value: "Hello  end"
