@@ -3,9 +3,6 @@ kind: Pipeline
 metadata:
   name: sample-pipeline
 spec:
-  params: 
-  - name: message
-    description: "Message Body"
   tasks:
     - name: sample-task1
       taskRef:
