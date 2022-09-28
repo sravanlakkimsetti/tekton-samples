@@ -10,12 +10,16 @@ spec:
       params:
         - name: message
           value: "Hello Sample task1"
+        - name: sleepDuration
+          value: 30
     - name: sample-task2
       taskRef:
         name: sample-task
       params:
         - name: message
           value: "Hello Sample task2"
+        - name: sleepDuration
+          value: 600
     - name: end-task
       runAfter: [ sample-task1, sample-task2 ]
       taskRef:
@@ -23,3 +27,5 @@ spec:
       params:
         - name: message
           value: "Hello  end"
+        - name: sleepDuration
+          value: 1
