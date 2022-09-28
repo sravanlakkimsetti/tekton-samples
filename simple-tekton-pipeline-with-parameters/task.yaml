@@ -5,6 +5,7 @@ metadata:
 spec:
   params:
   - name: message
+  - name: sleepDuration
   resources:
   steps:
     - name: sample-python-task
@@ -17,5 +18,6 @@ spec:
     - name: sample-shell-task
       image: ubuntu
       script: |
-        #!/bin/bash
+        #!/bin/bash -x
+        sleep $(params.sleepDuration)
         echo $(params.message)
