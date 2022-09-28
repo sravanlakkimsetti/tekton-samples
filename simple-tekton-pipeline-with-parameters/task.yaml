@@ -8,14 +8,14 @@ spec:
   resources:
   steps:
     - name: sample-python-task
-      image: python    
+      image: python:latest
       script: |
         #!/usr/bin/env python3
         
         print("Hello from Python!")
 
     - name: sample-shell-task
-      image: ubuntu    
+      image: ubuntu:latest
       script: |
         #!/bin/bash
         echo $(params.message)
