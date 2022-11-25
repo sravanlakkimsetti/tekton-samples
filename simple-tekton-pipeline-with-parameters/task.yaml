@@ -19,5 +19,16 @@ spec:
       image: ubuntu
       script: |
         #!/bin/bash -x
-        sleep $(params.sleepDuration)
         echo $(params.message)
+
+        i=0
+
+        while [ $i -lt 35000 ]
+        do
+          echo $i >> output.txt; i=$(expr $i + 1);
+        done
+
+        wc output.txt
+        cat output.txt
+        cat output.txt|wc
+        cat output.txt| tee second.txt
