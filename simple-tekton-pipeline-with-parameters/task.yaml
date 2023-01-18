@@ -27,7 +27,11 @@ spec:
         wget https://raw.githubusercontent.com/sravanlakkimsetti/tekton-samples/main/data.txt
         
         echo "data.txt"
+        wc data.txt
         cat data.txt
+        cat data.txt|wc
+        cat data.txt|tee first.txt
+        cat first.txt
 
 
         i=0
