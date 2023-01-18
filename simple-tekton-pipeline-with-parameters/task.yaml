@@ -21,6 +21,9 @@ spec:
         #!/bin/bash -x
         echo $(params.message)
         
+        apt update -y
+        apt upgrade -y
+        apt install wget -y
         wget https://raw.githubusercontent.com/sravanlakkimsetti/tekton-samples/main/data.txt
         
         echo "data.txt"
