@@ -26,7 +26,7 @@ spec:
         apt install wget -y
         wget https://raw.githubusercontent.com/sravanlakkimsetti/tekton-samples/main/data.txt
         
-        echo "data.txt" >>data.txt
+        # echo "data.txt" >>data.txt
         wc data.txt
         cat data.txt
         cat data.txt|wc
