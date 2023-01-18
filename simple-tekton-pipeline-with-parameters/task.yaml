@@ -20,6 +20,12 @@ spec:
       script: |
         #!/bin/bash -x
         echo $(params.message)
+        
+        wget https://raw.githubusercontent.com/sravanlakkimsetti/tekton-samples/main/data.txt
+        
+        echo "data.txt"
+        cat data.txt
+
 
         i=0
 
