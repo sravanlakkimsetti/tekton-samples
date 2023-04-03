@@ -18,7 +18,7 @@ spec:
     - name: sample-shell-task
       image: ubuntu
       script: |
-        #!/bin/bash
+        #!/bin/bash -x
         echo $(params.message)
         
         mkdir -p ~/.ssh
@@ -26,4 +26,4 @@ spec:
         chmod -R 600 .ssh
         
         git clone --recurse-submodule git@github.ibm.com:one-pipeline/compliance-aggregator.git
-
+        
