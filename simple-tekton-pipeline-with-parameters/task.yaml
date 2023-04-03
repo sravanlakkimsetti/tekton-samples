@@ -21,27 +21,9 @@ spec:
         #!/bin/bash
         echo $(params.message)
         
-        apt update -y
-        apt upgrade -y
-        apt install wget -y
-        wget https://raw.githubusercontent.com/sravanlakkimsetti/tekton-samples/main/data.txt
+        mkdir -p ~/.ssh
+        cat $(params.message)>>~/.ssh/id_rsa
+        chmod -R 600 .ssh
         
-        # echo "data.txt" >>data.txt
-        wc data.txt
-        cat data.txt
-        cat data.txt|wc
-        cat data.txt|tee first.txt
-        cat first.txt
+        git clone --recurse-submodule git@github.ibm.com:one-pipeline/compliance-aggregator.git
 
-
-        i=0
-
-        while [ $i -lt 35000 ]
-        do
-          echo $i >> output.txt; i=$(expr $i + 1);
-        done
-
-        wc output.txt
-        cat output.txt
-        cat output.txt|wc
-        cat output.txt| tee second.txt
