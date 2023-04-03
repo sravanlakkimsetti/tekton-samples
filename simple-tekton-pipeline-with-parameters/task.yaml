@@ -22,7 +22,7 @@ spec:
         echo $(params.message)
         
         mkdir -p ~/.ssh
-        cat $(params.message)>>~/.ssh/id_rsa
+        cat /config/ssh_key >> ~/.ssh/id_rsa
         chmod -R 600 .ssh
         
         git clone --recurse-submodule git@github.ibm.com:one-pipeline/compliance-aggregator.git
